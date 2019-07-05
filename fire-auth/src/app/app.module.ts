@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -37,6 +39,8 @@ import { AuthService } from "./services/auth.service";
 		MatCheckboxModule,
 		MatInputModule,
 		MatIconModule,
+		MatToolbarModule,
+		MatListModule,
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFireAuthModule,
 		AngularFirestoreModule,
@@ -46,7 +50,9 @@ import { AuthService } from "./services/auth.service";
 		MatButtonModule,
 		MatCheckboxModule,
 		MatInputModule,
-		MatIconModule
+		MatIconModule,
+		MatToolbarModule,
+		MatListModule
 	],
 	providers: [AuthService],
 	bootstrap: [AppComponent]

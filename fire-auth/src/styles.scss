@@ -34,3 +34,41 @@ a {
 		text-decoration: none;
 	}
 }
+
+.form-wrapper {
+	height: 100vh;
+
+	form {
+		width: 100%;
+		max-width: 400px;
+		margin: 0 auto;
+
+		input {
+			width: 100%;
+		}
+	}
+}
+
+.mat-form-field {
+	display: block;
+	width: 100%;
+}
+
+h3 {
+	margin-top: 0;
+	text-align: center;
+}
+
+.button-wrap {
+	margin-bottom: 15px;
+
+	.formGroup {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 15px;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
