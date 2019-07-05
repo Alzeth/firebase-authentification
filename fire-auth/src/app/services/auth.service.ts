@@ -32,7 +32,7 @@ export class AuthService {
 	}
 
 	// Sign in with email/password
-	SignIn(email, password) {
+	SignIn(email: string, password: string) {
 		return this.afAuth.auth.signInWithEmailAndPassword(email, password)
 		.then((result) => {
 			this.ngZone.run(() => {
@@ -45,7 +45,7 @@ export class AuthService {
 	}
 
 	// Sign up with email/password
-	SignUp(email, password) {
+	SignUp(email: string, password: string) {
 		return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
 		.then((result) => {
 		/* Call the SendVerificaitonMail() function when new user sign
@@ -66,7 +66,7 @@ export class AuthService {
 	}
 
 	// Reset Forgot password
-	ForgotPassword(passwordResetEmail) {
+	ForgotPassword(passwordResetEmail: string) {
 		return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
 		.then(() => {
 			window.alert('Password reset email sent, check your inbox.');
