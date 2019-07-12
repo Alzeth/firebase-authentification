@@ -29,8 +29,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 a {
+	transition: color 0.3s linear, background 0.3s linear;
+	color: #283593 !important;
 
 	&:hover {
+		color: #90CAF9 !important;
 		text-decoration: none;
 	}
 }
