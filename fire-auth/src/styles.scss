@@ -4,9 +4,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
+body {
+	height: 100vh;
+	overflow: hidden;
+}
 
 .container {
-	padding: 0 15px;
 	width: 100%;
 	max-width: 1400px;
 	margin: 0 auto;
@@ -14,6 +17,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .d-flex {
 	display: flex;
+	
+	&.d-tablet-flex {
+		display: block;
+		
+		@media (min-width: 768px) {
+			display: flex;
+		}
+	}
 
 	&.column {
 		flex-direction: column;
@@ -38,13 +49,24 @@ a {
 	}
 }
 
+h1 {
+
+	@media (max-width: 767px) {
+		font-size: 1.4em;
+	}
+}
+
 .form-wrapper {
 	height: 100vh;
+	margin: 0 -15px;
 
 	form {
 		width: 100%;
-		max-width: 400px;
-		margin: 0 auto;
+		max-width: 250px;
+		
+		@media (min-width: 768px) {
+			max-width: 400px;
+		}
 
 		input {
 			width: 100%;

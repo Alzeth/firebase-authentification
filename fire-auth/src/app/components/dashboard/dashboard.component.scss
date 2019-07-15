@@ -1,5 +1,8 @@
 .container-fluid {
-	height: 100%;
+
+	@media (min-width: 768px) {
+		height: 93%;
+	}
 }
 
 .mat-toolbar-row {
@@ -16,7 +19,7 @@
 }
 
 #sidebar {
-	background-color: #9E9E9E;
+	background-color: #009688;
 
 	@media (min-width: 768px) {
 		width: 15%;
@@ -37,21 +40,25 @@
 	}
 
 	.inner-adjust {
-		padding: 15px;
-
+		padding: 0 15px;
+		
 		@media (min-width: 768px) {
 			padding-left: 30px;
 		}
 	}
 
 	.media {
-		display: flex;
+
+		@media (min-width: 768px) {
+			display: flex;
+		}
 
 		.avatar {
 			border-radius: 100%;
-			max-width: 250px;
-
+			max-width: 100px;
+			
 			@media (min-width: 768px) {
+				max-width: 250px;
 				margin-right: 30px;
 			}
 		}

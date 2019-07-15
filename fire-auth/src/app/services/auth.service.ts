@@ -86,6 +86,16 @@ export class AuthService {
 		return this.AuthLogin(new auth.GoogleAuthProvider());
 	}
 
+	//Sign in with Facebook
+	FacebookAuth() {
+		return this.AuthLogin(new auth.FacebookAuthProvider());
+	}
+	
+	//Sign in with Twitter
+	TwitterAuth() {
+		return this.AuthLogin(new auth.TwitterAuthProvider());
+	}
+
 	// Auth logic to run auth providers
 	AuthLogin(provider) {
 		return this.afAuth.auth.signInWithPopup(provider)
