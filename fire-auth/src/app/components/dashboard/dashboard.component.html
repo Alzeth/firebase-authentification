@@ -1,0 +1,58 @@
+<!-- Top navigation -->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span><img class="brand-logo" src="../../../assets/images/speedometer.svg" alt="Logo"> Dashboard</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- Sidebar navigation -->
+<div class="container-fluid d-flex d-tablet-flex">
+
+  <aside id="sidebar">
+    <mat-list>
+      <mat-list-item>
+        User Profile
+      </mat-list-item>
+      <!-- Calling SignOut() Api from AuthService -->
+      <mat-list-item>
+        <a
+          href="javascript:void(0);"
+          (click)="authService.SignOut()">
+          <i class="fas fa-sign-out-alt"></i>
+          Log out
+        </a>
+      </mat-list-item>
+    </mat-list>
+  </aside>
+
+  <!-- Main content -->
+  <div id="content">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="inner-adjust">
+
+        <div class="heading">
+          <h1 class="h2">User Profile</h1>
+        </div>
+        <!-- Show user data when logged in -->
+        <div class="row" *ngIf="authService.userData as user">
+          <div class="col">
+            <div class="media">
+              <img class="avatar"
+                src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}" alt="{{user.displayName}}">
+              <div class="media-body">
+                <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                <ul>
+                  <li>User ID: <strong>{{user.uid}}</strong></li>
+                  <li>Email: <strong>{{user.email}}</strong></li>
+                  <li>Email Verified: <strong>{{user.emailVerified}}</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  
+</div>

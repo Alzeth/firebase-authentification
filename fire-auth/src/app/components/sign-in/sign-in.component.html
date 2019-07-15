@@ -1,0 +1,66 @@
+<div class="container">
+
+		<div class="form-wrapper d-flex column justify-center align-center">
+			<form>
+				<div class="authBlock">
+					<h3>Sign In</h3>
+					<div class="formGroup">
+						<mat-form-field>
+							<input matInput type="text" class="formControl" placeholder="Username" #userName required>
+						</mat-form-field>
+					</div>
+		
+					<div class="formGroup">
+						<mat-form-field>
+							<input matInput type="password" class="formControl" placeholder="Password" #userPassword required>
+						</mat-form-field>
+					</div>
+		
+					<div class="button-wrap">
+						<!-- Calling SignIn Api from AuthService -->
+						<div class="formGroup">
+							<button mat-raised-button color="primary"
+							(click)="authService.SignIn(userName.value, userPassword.value)">Log in</button>
+						</div>
+			
+						<div class="formGroup">
+							<span class="or"><span class="orInner">Or</span></span>
+						</div>
+			
+						<!-- Calling GoogleAuth Api from AuthService -->
+					<div class="formGroup">
+						<button mat-raised-button color="primary" class="brandBtn" (click)="authService.GoogleAuth()">
+							<img src="../../../assets/images/google-logo.svg" alt="Google">
+							Log In with Google
+						</button>
+					</div>
+					
+					<!-- Log In with Facebook -->
+					<div class="formGroup">
+						<button mat-stroked-button class="brandBtn" (click)="authService.FacebookAuth()">
+							<img src="../../../assets/images/facebook-logo.svg" alt="Facebook">
+							Log In with Facebook
+						</button>
+					</div>
+					
+					<!-- Log In with Twitter -->
+					<div class="formGroup">
+						<button mat-raised-button color="primary" class="brandBtn" (click)="authService.TwitterAuth()">
+							<img src="../../../assets/images/twitter-logo.svg" alt="Twitter">
+							Log In with Twitter
+						</button>
+					</div>
+					</div>
+		
+					<div class="forgotPassword text-center">
+						<a routerLink="/forgot-password">Forgot Password?</a>
+					</div>
+				</div>
+		
+				<div class="redirectToLogin text-center">
+					<span>Don't have an account?<a class="redirect" routerLink="/register-user"> Sign Up</a></span>
+				</div>
+			</form>
+		</div>
+
+</div>

@@ -1,0 +1,62 @@
+<div class="container">
+
+	<div class="form-wrapper d-flex column justify-center align-center">
+		<form>
+			<div class="authBlock">
+				<h3>Sign Up</h3>
+				<div class="formGroup">
+					<mat-form-field>
+						<input matInput type="email" class="formControl" placeholder="Email Address" #userEmail required>
+					</mat-form-field>
+				</div>
+
+				<div class="formGroup">
+					<mat-form-field>
+						<input matInput type="password" class="formControl" placeholder="Password" #userPassword required>
+					</mat-form-field>
+				</div>
+
+				<div class="button-wrap">
+					<div class="formGroup">
+						<button mat-raised-button color="primary"
+							(click)="authService.SignUp(userEmail.value, userPwd.value)">Sign Up</button>
+					</div>
+
+					<div class="formGroup">
+						<span class="or"><span class="orInner">Or</span></span>
+					</div>
+
+					<!-- Continue with Google -->
+					<div class="formGroup">
+						<button mat-raised-button color="primary" class="brandBtn" (click)="authService.GoogleAuth()">
+							<img src="../../../assets/images/google-logo.svg" alt="Google">
+							Continue with Google
+						</button>
+					</div>
+					
+					<!-- Continue with Facebook -->
+					<div class="formGroup">
+						<button mat-stroked-button class="brandBtn" (click)="authService.FacebookAuth()">
+							<img src="../../../assets/images/facebook-logo.svg" alt="Facebook">
+							Continue with Facebook
+						</button>
+					</div>
+					
+					<!-- Continue with Twitter -->
+					<div class="formGroup">
+						<button mat-raised-button color="primary" class="brandBtn" (click)="authService.TwitterAuth()">
+							<img src="../../../assets/images/twitter-logo.svg" alt="Twitter">
+							Continue with Twitter
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="redirectToLogin text-center">
+				<span>Already have an account?<a class="redirect" routerLink="/sign-in"> Log In</a></span>
+			</div>
+		</form>
+	</div>
+
+</div>
+

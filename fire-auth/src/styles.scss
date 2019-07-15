@@ -1,0 +1,99 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+body {
+	height: 100vh;
+	overflow: hidden;
+}
+
+.container {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.d-flex {
+	display: flex;
+	
+	&.d-tablet-flex {
+		display: block;
+		
+		@media (min-width: 768px) {
+			display: flex;
+		}
+	}
+
+	&.column {
+		flex-direction: column;
+	}
+
+	&.justify-center {
+		justify-content: center;
+	}
+
+	&.align-center {
+		align-items: center;
+	}
+}
+
+a {
+	transition: color 0.3s linear, background 0.3s linear;
+	color: #283593 !important;
+
+	&:hover {
+		color: #90CAF9 !important;
+		text-decoration: none;
+	}
+}
+
+h1 {
+
+	@media (max-width: 767px) {
+		font-size: 1.4em;
+	}
+}
+
+.form-wrapper {
+	height: 100vh;
+	margin: 0 -15px;
+
+	form {
+		width: 100%;
+		max-width: 250px;
+		
+		@media (min-width: 768px) {
+			max-width: 400px;
+		}
+
+		input {
+			width: 100%;
+		}
+	}
+}
+
+.mat-form-field {
+	display: block;
+	width: 100%;
+}
+
+h3 {
+	margin-top: 0;
+	text-align: center;
+}
+
+.button-wrap {
+	margin-bottom: 15px;
+
+	.formGroup {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 15px;
+	}
+}
+
+.text-center {
+	text-align: center;
+}
