@@ -6,6 +6,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -54,7 +55,10 @@ import { AuthService } from "./services/auth.service";
 		MatToolbarModule,
 		MatListModule
 	],
-	providers: [AuthService],
+	providers: [
+		AuthService,
+		{ provide: LocationStrategy, useClass: PathLocationStrategy }
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
